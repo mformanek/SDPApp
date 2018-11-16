@@ -2,6 +2,13 @@ const express = require('express')
 const db = require("./database.js")
 const app = express()
 
+var router = express.Router();
+
+// Routes for everything
+router.get("/verify", function(req,res) {
+    res.send("./verify.js");
+})
+
 let port = process.env.PORT;
 if (port == null || port == "") {
   port = 8000;
