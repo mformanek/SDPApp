@@ -9,6 +9,6 @@ if (port == null || port == "") {
 
 app.use(express.static(path));
 
-app.get('/', (req, res) => res.sendFile(path + 'home.html'))
+app.get('/home.html', (req, res) => res.sendFile(path + 'home.html'))
 
 app.listen(port, () => console.log(`Listening on port ${port}!`))

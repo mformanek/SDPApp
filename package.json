@@ -6,7 +6,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "pg": "^7.6.1",
-    "pg-promise": "^8.5.2"
+    "pg-promise": "^8.5.2",
+    "sha3": "^2.0.0"
   },
   "devDependencies": {},
   "scripts": {
