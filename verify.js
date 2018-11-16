@@ -5,6 +5,8 @@ app.put('/login/verify', function (req, res) {
     req.assert("user","user required").notEmpty();
     req.assert("pass","pass required").notEmpty();
     
+    console.log("test")
+    
     var errors = req.validationErrors();
     
     if (!errors) {
