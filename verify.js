@@ -1,7 +1,7 @@
 db = require("./database.js");
 module.exports = app;
 
-app.put('/verify', function (req, res) {
+app.put('/login/verify', function (req, res) {
     req.assert("user","user required").notEmpty();
     req.assert("pass","pass required").notEmpty();
     
