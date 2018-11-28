@@ -18,9 +18,9 @@ app.put('/login/verify', function (req, res) {
                     "WHERE username = " + id.user +
                         "AND hashvalue = " + id.pass //TODO: do a hash here thx
         ).then(function (res) {
-                   //res.flash("success","login")
-                   res.render("about.html")
-               }
+                    //res.flash("success","login")
+                    res.render("about.html")
+                }
         )
         
         res.sendFile("about.html")
