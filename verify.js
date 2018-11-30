@@ -14,11 +14,6 @@ app.put('/verify', function (req, res) {
             user: req.santitize("user").escape().trim(),
             pass: req.santitize("pass").escape().trim()
         };
-        /*
-        db.none("SELECT * FROM login" +
-                    "WHERE username = " + id.user +
-                        "AND hashvalue = " + id.pass //TODO: do a hash here thx
-                        */
         db.func('checkuser', [id.user, id.pass])
             .then( data => {
                 var temp = data[0];
@@ -30,15 +25,6 @@ app.put('/verify', function (req, res) {
                 else {
                     res.render("login.html");
                 }
-            /*
-        ).then(function (res) {
-                    //res.flash("success","login")
-                    res.render("about.html")
-                }
-        )
-        */
-        
-        //res.sendFile("about.html")
         })
     }
 });
