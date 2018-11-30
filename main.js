@@ -4,7 +4,7 @@ var exp_val = require('express-validator');
 
 //const vf = require("./verify.js")
 const app = express();
-app.use(expressValidator());
+app.use(exp_val());
 
 
 let port = process.env.PORT;
