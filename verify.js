@@ -24,7 +24,7 @@ app.put('/verify', function (req, res) {
                     res.render("home.html");
                 }
                 else {
-                    res.render("login.html");
+                    res.render("home.html");
                 }
         })
     }
