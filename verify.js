@@ -1,6 +1,6 @@
 db = require("./database.js");
 
-app.post('./verify', function (req, res) {
+app.post('/verify', function (req, res) {
     console.log("Hello world");
     req.assert("user","user required").notEmpty();
     req.assert("pass","pass required").notEmpty();
