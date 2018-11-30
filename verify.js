@@ -18,7 +18,8 @@ app.put('/verify', function (req, res) {
             .then( data => {
                 var temp = data[0];
                 var final = temp.checkuser;
-                console.log("final =", final)
+                console.log("temp =", temp);
+                console.log("final =", final);
                 if (final == true){
                     res.render("home.html");
                 }
