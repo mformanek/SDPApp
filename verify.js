@@ -1,7 +1,7 @@
 const express = require("express")
 db = require("./database.js");
 app = express();
-
+/*
 app.post('/verify', function (req, res) {
     console.log("Hello world");
     req.assert("user","user required").notEmpty();
@@ -31,5 +31,5 @@ app.post('/verify', function (req, res) {
         })
     }
 });
-
+*/
 module.exports = app;

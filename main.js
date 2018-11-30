@@ -1,9 +1,8 @@
 const express = require('express')
 const db = require("./database.js")
+const exp-val = require("express-validator")
 //const vf = require("./verify.js")
 const app = express()
-
-module.exports = app;
 
 let port = process.env.PORT;
 if (port == null || port == "") {
@@ -53,3 +52,4 @@ app.post('/verify', function (req, res) {
 
 app.listen(port, () => console.log(`Listening on port ${port}!`))
 
+module.exports = app;
