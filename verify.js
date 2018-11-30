@@ -1,5 +1,4 @@
 db = require("./database.js");
-app = express();
 
 app.post('./verify', function (req, res) {
     console.log("Hello world");

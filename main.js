@@ -3,6 +3,8 @@ const db = require("./database.js")
 const vf = require("./verify.js")
 const app = express()
 
+module.exports = app;
+
 let port = process.env.PORT;
 if (port == null || port == "") {
   port = 8000;
@@ -17,3 +19,4 @@ app.get('/verify', function (req, res) {
 })
 
 app.listen(port, () => console.log(`Listening on port ${port}!`))
+
