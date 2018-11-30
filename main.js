@@ -23,8 +23,8 @@ app.get('/verify', function (req, res) {
 
 app.post('/verify', function (req, res) {
     console.log("Hello world");
-    //req.assert("user","user required").notEmpty();
-    //req.assert("pass","pass required").notEmpty();
+    req.assert("user","user required").notEmpty();
+    req.assert("pass","pass required").notEmpty();
 
     console.log("test");
     
@@ -32,8 +32,8 @@ app.post('/verify', function (req, res) {
     
     if (!errors) {
         var id = {
-            user: req.santitize("user").escape().trim(),
-            pass: req.santitize("pass").escape().trim()
+            user: req.sanitize("user").escape().trim(),
+            pass: req.sanitize("pass").escape().trim()
         };
         db.func('checkuser', [id.user, id.pass])
             .then( data => {
