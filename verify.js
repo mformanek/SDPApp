@@ -21,10 +21,10 @@ app.put('/verify', function (req, res) {
                 console.log("temp =", temp);
                 console.log("final =", final);
                 if (final == true){
-                    res.render("home.html");
+                    res.redirect("home.html");
                 }
                 else {
-                    res.render("home.html");
+                    res.redirect("home.html");
                 }
         })
     }
