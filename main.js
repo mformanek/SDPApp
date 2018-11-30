@@ -16,6 +16,7 @@ app.get('/', (req, res) => res.sendFile(path + 'home.html'))
 
 app.get('/verify', function (req, res) {
     res.sendFile(path + "login.html")
+    console.log("Here I am in app.get(verify)");
 })
 
 app.listen(port, () => console.log(`Listening on port ${port}!`))
