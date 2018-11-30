@@ -1,5 +1,6 @@
 const express = require('express')
 const db = require("./database.js")
+const vf = require("./verify.js")
 const app = express()
 
 let port = process.env.PORT;
