@@ -1,9 +1,11 @@
 const express = require('express');
 const db = require('./database.js');
 var exp_val = require('express-validator');
+var bodyParser = require('body-parser');
 
 //const vf = require("./verify.js")
 const app = express();
+app.use(bodyParser.json())
 app.use(exp_val());
 
 
