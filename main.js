@@ -29,6 +29,7 @@ app.post('/verify', function (req, res) {
     console.log("test");
     
     var errors = req.validationErrors();
+    console.log(errors);
     
     if (!errors) {
         var id = {
@@ -41,7 +42,6 @@ app.post('/verify', function (req, res) {
                 var final = temp.checkuser;
                 console.log("temp =", temp);
                 console.log("final =", final);
-                console.log("redirecting")
                 if (final == true){
                     res.redirect("home.html");
                 }
