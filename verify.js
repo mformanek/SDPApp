@@ -2,9 +2,9 @@ db = require("./database.js");
 module.exports = app;
 
 app.post('/verify', function (req, res) {
-    /*req.assert("user","user required").notEmpty();
+    req.assert("user","user required").notEmpty();
     req.assert("pass","pass required").notEmpty();
-    
+
     console.log("test");
     
     var errors = req.validationErrors();
@@ -27,5 +27,5 @@ app.post('/verify', function (req, res) {
                     res.redirect("home.html");
                 }
         })
-    }*/
+    }
 });
