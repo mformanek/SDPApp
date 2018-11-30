@@ -2,10 +2,12 @@ db = require("./database.js");
 module.exports = app;
 
 app.post('/verify', function (req, res) {
-    console.log("Hello");
+<<<<<<< HEAD
+=======
+>>>>>>> 4addcb9d3ac016de2ba47b4c02599590a95623c3
     req.assert("user","user required").notEmpty();
     req.assert("pass","pass required").notEmpty();
-    
+
     console.log("test");
     
     var errors = req.validationErrors();
