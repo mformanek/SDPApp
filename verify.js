@@ -19,17 +19,22 @@ app.put('/verify', function (req, res) {
                     "WHERE username = " + id.user +
                         "AND hashvalue = " + id.pass //TODO: do a hash here thx
                         */
-        db.func('checkuser', [id.user, id.pass])
+        var errors = req.validationErrors();
+        if (!errors){
+            db.func('checkuser', [id.user, id.pass])
             .then( data => {
                 var temp = data[0];
                 var final = temp.checkuser;
-                console.log("final =", final)
+                console.log("final =", final);
+                console.log("temp =", temp);
                 if (final == true){
                     res.render("home.html");
                 }
                 else {
                     res.render("login.html");
                 }
+        }
+        
             /*
         ).then(function (res) {
                     //res.flash("success","login")
