@@ -6,7 +6,7 @@ const app = express()
 
 let port = process.env.PORT;
 if (port == null || port == "") {
-  port = 8000;
+    port = 8000;
 }var path = __dirname + '/public/'
 
 app.use(express.static(path));
@@ -20,8 +20,8 @@ app.get('/verify', function (req, res) {
 
 app.post('/verify', function (req, res) {
     console.log("Hello world");
-    req.assert("user","user required").notEmpty();
-    req.assert("pass","pass required").notEmpty();
+    //req.assert("user","user required").notEmpty();
+    //req.assert("pass","pass required").notEmpty();
 
     console.log("test");
     
