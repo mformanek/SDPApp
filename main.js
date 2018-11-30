@@ -49,6 +49,8 @@ app.post('/verify', function (req, res) {
                 }
         })
     }
+    console.log("ding! the function's done");
+
 });
 
 //app.use("/verify", vf)
