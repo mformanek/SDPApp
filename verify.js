@@ -1,4 +1,5 @@
 db = require("./database.js");
+main = require("./main.js");
 module.exports = app;
 
 app.post('/public/verify', function (req, res) {
