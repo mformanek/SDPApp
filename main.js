@@ -23,19 +23,21 @@ app.get('/verify', function (req, res) {
 
 app.post('/verify', function (req, res) {
     console.log("Hello world");
-    //req.assert("user","user required").notEmpty();
-    //req.assert("pass","pass required").notEmpty();
+    req.assert("user","user required").notEmpty();
+    req.assert("pass","pass required").notEmpty();
 
     console.log("test");
     
-    //var errors = req.validationErrors();
-    //console.log(errors);
+    var errors = req.validationErrors();
+    console.log(errors);
     
-    //if (!errors) {
+    if (!errors) {
         var id = {
             user: req.sanitize("user").escape().trim(),
             pass: req.sanitize("pass").escape().trim()
         };
+        console.log("user =", id.user);
+        console.log("pass =", id.pass);
         db.func('checkuser', [id.user, id.pass])
             .then( data => {
                 var temp = data[0];
@@ -49,7 +51,7 @@ app.post('/verify', function (req, res) {
                     res.redirect("home.html");
                 }
         })
-    //}
+    }
     console.log("ding! the function's done");
 
 });
