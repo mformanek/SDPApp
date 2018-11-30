@@ -1,9 +1,11 @@
 const express = require('express');
 const db = require('./database.js');
 var exp_val = require('express-validator');
-app.use(expressValidator());
+
 //const vf = require("./verify.js")
-const app = express()
+const app = express();
+app.use(expressValidator());
+
 
 let port = process.env.PORT;
 if (port == null || port == "") {
