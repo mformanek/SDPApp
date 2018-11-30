@@ -49,7 +49,7 @@ app.post('/verify', function (req, res) {
     }
 });
 
-app.use("/verify", vf)
+//app.use("/verify", vf)
 
 app.listen(port, () => console.log(`Listening on port ${port}!`))
 
