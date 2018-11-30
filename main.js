@@ -1,6 +1,6 @@
 const express = require('express')
 const db = require("./database.js")
-const exp-val = require("express-validator")
+var exp-val = require("express-validator")
 //const vf = require("./verify.js")
 const app = express()
 
