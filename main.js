@@ -11,7 +11,7 @@ app.use(express.static(path));
 
 app.get('/', (req, res) => res.sendFile(path + 'home.html'))
 
-app.get('/verify', function (req, res) {
+app.get('/login', function (req, res) {
     res.sendFile(path + "login.html")
 })
 
