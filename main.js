@@ -1,6 +1,7 @@
 const express = require('express');
 const db = require('./database.js');
 var exp_val = require('express-validator');
+app.use(expressValidator());
 //const vf = require("./verify.js")
 const app = express()
 
