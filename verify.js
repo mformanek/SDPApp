@@ -1,6 +1,5 @@
 db = require("./database.js");
-main = require("./main.js");
-module.exports = app;
+app = express();
 
 app.post('./verify', function (req, res) {
     console.log("Hello world");
@@ -31,3 +30,5 @@ app.post('./verify', function (req, res) {
         })
     }
 });
+
+module.exports = app;
