@@ -15,6 +15,7 @@ if (port == null || port == "") {
 }var path = __dirname + '/public/'
 
 app.use(express.static(path));
+module.exports = app;
 
 app.get('/', (req, res) => res.sendFile(path + 'home.html'))
 
@@ -32,7 +33,20 @@ app.post('/verify', function (req, res) {
     
     var errors = req.validationErrors();
     console.log(errors);
-    
+    db.func('checkuser', ['userC', 'helloworld'])
+        .then(data => {
+            console.log("Here I am");
+            var temp = data[0];
+            var final = temp.checkuser;
+            console.log("final -", final);
+            if (final == true){
+                res.redirect("home.html");
+            }
+            else {
+                res.redirect("about.html");
+            }
+        })
+    /*
     if (!errors) {
         var id = {
             user: req.sanitize("user").escape().trim(),
@@ -42,6 +56,7 @@ app.post('/verify', function (req, res) {
         console.log("pass =", id.pass);
         db.func('checkuser', ['userC', 'helloworld'])
             .then( data => {
+                console.log("I'm in the db function");
                 var temp = data[0];
                 var final = temp.checkuser;
                 console.log("temp =", temp);
@@ -54,13 +69,14 @@ app.post('/verify', function (req, res) {
                 }
         })
     }
+    */
     console.log("ding! the function's done");
 
 });
 
 //app.use("/verify", vf)
 
-var server = app.listen(port, () => console.log(`Listening on port ${port}!`))
-server.timeout = 30100;
+app.listen(port, () => console.log(`Listening on port ${port}!`))
 
-module.exports = app;
+
+
