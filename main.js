@@ -40,13 +40,14 @@ app.post('/verify', function (req, res) {
             var final = temp.checkuser;
             console.log("final -", final);
             if (final == true){
+                req.flash("Login credentials accepted");
                 res.redirect("home.html");
             }
             else {
                 res.redirect("about.html");
             }
         })
-    /*
+    /* //UNCOMMENT THIS if you want to work on the form section.
     if (!errors) {
         var id = {
             user: req.sanitize("user").escape().trim(),
