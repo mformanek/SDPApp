@@ -25,15 +25,15 @@ app.get('/verify', function (req, res) {
 
 app.post('/verify', function (req, res) {
     console.log("Hello world");
-    //req.assert("user","user required").notEmpty();
-    //req.assert("pass","pass required").notEmpty();
+    req.assert("user","user required").notEmpty();
+    req.assert("pass","pass required").notEmpty();
 
     console.log("test");
     
-    //var errors = req.validationErrors();
-    //console.log(errors);
+    var errors = req.validationErrors();
+    console.log(errors);
     
-   // if (!errors) {
+    if (!errors) {
         var id = {
             user: req.sanitize("user").escape().trim(),
             pass: req.sanitize("pass").escape().trim()
@@ -53,13 +53,14 @@ app.post('/verify', function (req, res) {
                     res.redirect("home.html");
                 }
         })
-    //}
+    }
     console.log("ding! the function's done");
 
 });
 
 //app.use("/verify", vf)
 
-app.listen(port, () => console.log(`Listening on port ${port}!`))
+var server = app.listen(port, () => console.log(`Listening on port ${port}!`))
+server.timeout = 30100;
 
 module.exports = app;
