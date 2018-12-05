@@ -40,7 +40,7 @@ app.post('/verify', function (req, res) {
         };
         console.log("user =", id.user);
         console.log("pass =", id.pass);
-        db.func('checkuser', [id.user, id.pass])
+        db.func('checkuser', ['userC', 'helloworld'])
             .then( data => {
                 var temp = data[0];
                 var final = temp.checkuser;
