@@ -40,7 +40,6 @@ app.post('/verify', function (req, res) {
             var final = temp.checkuser;
             console.log("final -", final);
             if (final == true){
-                req.flash("Login credentials accepted");
                 res.redirect("home.html");
             }
             else {
