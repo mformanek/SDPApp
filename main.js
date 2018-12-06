@@ -65,6 +65,7 @@ app.post('/verify', function (req, res) {
         })
     }
     else {
+        req.flash('error', 'Im trying flash');
         an("Error! Did you put in a unsername and a password?", "window");
         res.redirect("login.html");
     }
