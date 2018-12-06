@@ -2,7 +2,6 @@ const express = require('express');
 const db = require('./database.js');
 var exp_val = require('express-validator');
 
-//const vf = require("./verify.js")
 const app = express();
 app.use(exp_val());
 
@@ -53,8 +52,6 @@ app.post('/verify', function (req, res) {
     console.log("ding! the function's done");
 
 });
-
-//app.use("/verify", vf)
 
 app.listen(port, () => console.log(`Listening on port ${port}!`))
 
