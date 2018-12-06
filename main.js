@@ -44,7 +44,7 @@ function getSalt(user) {
                 " where login.username = " + user;
     db.any(query).then(function (data) {
             salt = data[0].salt;
-            console.log(data);
+            console.log(salt);
         });
     return salt;
 }
