@@ -5,12 +5,10 @@ const sess = require("express-session");
 var exp_val = require('express-validator');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var an = require("alert-node");
-//import alert from "alert-node";
+import alert from "alert-node";
 
 const app = express();
 app.use(bodyParser.json());
-app.use(an());
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
 })); 
@@ -67,7 +65,7 @@ app.post('/verify', function (req, res) {
         })
     }
     else {
-        alert("Error","Did you put in a unsername and a password?");
+       alert("Error","Did you put in a unsername and a password?");
         res.redirect("login.html");
     }
     console.log("ding! the function's done");
