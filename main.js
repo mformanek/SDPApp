@@ -5,7 +5,7 @@ const sess = require("express-session");
 var exp_val = require('express-validator');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-import alert from "alert-node";
+var an = require("alert-node")
 
 const app = express();
 app.use(bodyParser.json());
