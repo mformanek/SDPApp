@@ -53,7 +53,7 @@ app.post('/verify', function (req, res) {
         })
     }
     else {
-        req.flash("info","Erorr, did you put in a unsername and a password?")
+        req.flash("info","Erorr, did you put in a unsername and a password?");
         res.redirect("login.html");
     }
     console.log("ding! the function's done");
@@ -62,4 +62,4 @@ app.post('/verify', function (req, res) {
 
 app.listen(port, () => console.log(`Listening on port ${port}!`))
 
-module.exports = app;
+module.exports = app; 
