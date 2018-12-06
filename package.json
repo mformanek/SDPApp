@@ -4,6 +4,7 @@
   "description": "Meme generator",
   "main": "main.js",
   "dependencies": {
+    "alert": "^1.0.0",
     "alert-node": "^1.2.3",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
