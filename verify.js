@@ -32,4 +32,5 @@ app.post('/verify', function (req, res) {
     }
 });
 */
+console.log("I'm in verify.js");
 module.exports = app;
