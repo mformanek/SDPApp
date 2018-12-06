@@ -7,6 +7,10 @@ var cookieParser = require('cookie-parser');
 
 
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+    extended: true
+})); 
 app.use(cookieParser('notMonday'));
 app.use(sess({
     secret: 'notMonday',
@@ -37,17 +41,16 @@ app.post('/verify', function (req, res) {
     req.assert("user","user required").notEmpty();
     req.assert("pass","pass required").notEmpty();
 
+    var username = req.body.user;
+    var pass = req.body.pass
     console.log("test");
     
     var errors = req.validationErrors();
     console.log(errors);
     
     if (!errors) {
-        var id = {
-            user: req.sanitize("user").escape().trim(),
-            pass: req.sanitize("pass").escape().trim()
-        };
-        db.func('checkuser', [id.user, id.pass])
+        var name = 
+        db.func('checkuser', [username, pass])
             .then( data => {
                 var temp = data[0];
                 var final = temp.checkuser;
