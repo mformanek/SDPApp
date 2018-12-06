@@ -65,7 +65,10 @@ app.post('/verify', function (req, res) {
         var salt = getSalt(username);
         console.log("salt");
         console.log(salt);
-        db.func('checkuser', [username, pass])
+        var hash = bcrypt.hashSync(pass,salt);
+        console.log("hash");
+        console.log(hash);
+        db.func('checkuser', [username, hash])
             .then( data => {
                 var temp = data[0];
                 var final = temp.checkuser;
@@ -79,7 +82,7 @@ app.post('/verify', function (req, res) {
     }
     else {
         req.flash('error', 'Im trying flash');
-        an("Error! Did you put in a unsername and a password?", "window");
+        an("Error! Did you put in a username and a password?", "window");
         res.redirect("login.html");
     }
     console.log("ding! the function's done");
