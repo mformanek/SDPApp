@@ -4,6 +4,7 @@ const flash = require("express-flash");
 const sess = require("express-session");
 var exp_val = require('express-validator');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 
 
 const app = express();
