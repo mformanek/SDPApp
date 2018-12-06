@@ -5,7 +5,7 @@ const sess = require("express-session");
 var exp_val = require('express-validator');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var popup = require("popups");
+import alert from "alert-node";
 
 const app = express();
 app.use(bodyParser.json());
@@ -66,9 +66,7 @@ app.post('/verify', function (req, res) {
         })
     }
     else {
-       popup.alert({
-           content:"Erorr, did you put in a unsername and a password?"
-           });
+       alert("Error","Did you put in a unsername and a password?");
         res.redirect("login.html");
     }
     console.log("ding! the function's done");
