@@ -5,10 +5,12 @@ const sess = require("express-session");
 var exp_val = require('express-validator');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-import alert from "alert-node";
+var an = require("alert-node");
+//import alert from "alert-node";
 
 const app = express();
 app.use(bodyParser.json());
+app.use(an());
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
 })); 
