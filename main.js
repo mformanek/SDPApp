@@ -50,7 +50,6 @@ app.post('/verify', function (req, res) {
     console.log(errors);
     
     if (!errors) {
-        var name = 
         db.func('checkuser', [username, pass])
             .then( data => {
                 var temp = data[0];
