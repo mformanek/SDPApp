@@ -66,7 +66,7 @@ app.post('/verify', function (req, res) {
         })
     }
     else {
-        req.flash("info","Erorr, did you put in a unsername and a password?");
+        alert("Erorr, did you put in a unsername and a password?");
         res.redirect("login.html");
     }
     console.log("ding! the function's done");
