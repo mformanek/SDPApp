@@ -5,13 +5,14 @@ const sess = require("express-session");
 var exp_val = require('express-validator');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var an = require("alert-node")
+var an = require("alert-node");
+const bcrypt = require("bcrypt");
 
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
-})); 
+}));
 app.use(cookieParser('notMonday'));
 app.use(sess({
     secret: 'notMonday',
@@ -37,6 +38,16 @@ app.get('/verify', function (req, res) {
     console.log("Here I am in app.get(verify)");
 })
 
+function getSalt(user) {
+    var query = "select login.username, login.salt from login" +
+                " where login.username = " + user;
+    db.any(query).then(function (data) {
+            var salt = data[0].salt;
+            console.log(datas)
+        });
+    return salt;
+}
+
 app.post('/verify', function (req, res) {
     console.log("Hello world");
     req.assert("user","user required").notEmpty();
@@ -50,6 +61,9 @@ app.post('/verify', function (req, res) {
     console.log(errors);
     
     if (!errors) {
+        var salt = getSalt(username);
+        console.log("salt");
+        console.log(salt);
         db.func('checkuser', [username, pass])
             .then( data => {
                 var temp = data[0];
