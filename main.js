@@ -39,11 +39,12 @@ app.get('/verify', function (req, res) {
 })
 
 function getSalt(user) {
+    var salt = '';
     var query = "select login.username, login.salt from login" +
                 " where login.username = " + user;
     db.any(query).then(function (data) {
-            var salt = data[0].salt;
-            console.log(datas)
+            salt = data[0].salt;
+            console.log(data);
         });
     return salt;
 }
