@@ -1,13 +1,12 @@
 const express = require('express');
 const db = require('./database.js');
 const flash = require("flash")
-app.use(flash)
 var exp_val = require('express-validator');
 
 
 const app = express();
 app.use(exp_val());
-
+app.use(flash)
 
 let port = process.env.PORT;
 if (port == null || port == "") {
