@@ -6,7 +6,7 @@ var exp_val = require('express-validator');
 
 const app = express();
 app.use(exp_val());
-app.use(flash)
+app.use(flash())
 
 let port = process.env.PORT;
 if (port == null || port == "") {
