@@ -5,6 +5,8 @@
   "main": "main.js",
   "dependencies": {
     "alert-node": "^1.2.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.4",
