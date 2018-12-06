@@ -3,6 +3,14 @@ const db = require('./database.js');
 const flash = require("express-flash");
 const sess = require("express-session");
 var exp_val = require('express-validator');
+var cookieParser = require('cookie-parser');
+app.use(cookieParser('notMonday'));
+app.use(sess({
+    secret: 'notMonday',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {maxAge: 60000}
+}));
 
 const app = express();
 app.use(sess());
