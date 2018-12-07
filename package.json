@@ -29,4 +29,7 @@
   },
   "author": "Not Monday",
   "license": "GPL-3.0"
-}
+  },
+  "scripts": {
+    "test": "jshint main.js"
+  }
