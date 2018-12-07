@@ -23,13 +23,12 @@
     "sha3": "^2.0.0",
     "validator": "^10.9.0"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Not Monday",
-  "license": "GPL-3.0"
+  "devDependencies": {
+    "jshint": "^2.9.6"
   },
   "scripts": {
     "test": "jshint main.js"
-  }
+  },
+  "author": "Not Monday",
+  "license": "GPL-3.0"
+}
