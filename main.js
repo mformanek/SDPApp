@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const express = require('express');
 const db = require('./database.js');
 const flash = require("express-flash");
