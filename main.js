@@ -28,16 +28,16 @@ app.use(flash());
 let port = process.env.PORT;
 if (port == null || port == "") {
     port = 8000;
-}var path = __dirname + '/public/'
+}var path = __dirname + '/public/';
 
 app.use(express.static(path));
 
-app.get('/', (req, res) => res.sendFile(path + 'home.html'))
+app.get('/', (req, res) => res.sendFile(path + 'home.html'));
 
 app.get('/verify', function (req, res) {
-    res.sendFile(path + "login.html")
+    res.sendFile(path + "login.html");
     console.log("Here I am in app.get(verify)");
-})
+});
 
 function getHash(user) {
     var hash = '';
@@ -97,9 +97,9 @@ app.get('/logout', function (req, res) {
 });
 
 app.get('/signup', function (req, res) {
-    res.sendFile(path + "login.html")
+    res.sendFile(path + "login.html");
     console.log("Here I am in app.get(signup)");
-})
+});
 
 app.post('/signup', function (req, res) {
     console.log("Hello world Sign up");
@@ -146,7 +146,7 @@ app.get('/button', function (req, res) {
         })
         .catch(function(error){
 
-        })
+        });
     }
 });
 
@@ -169,10 +169,10 @@ app.get('/buttonX', function (req, res) {
         })
         .catch(function(error){
 
-        })
+        });
     }
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}!`))
+app.listen(port, () => console.log(`Listening on port ${port}!`));
 
 module.exports = app;  
