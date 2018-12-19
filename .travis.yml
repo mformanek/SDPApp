@@ -1,7 +1,7 @@
 language: node_js
 node_js:
     - 10.14
-script: node_modules/karma/bin/karma start karma.conf.js --single-run
+script: npm test
 install: npm install
 before_install:
     - export CHROME_BIN=chromium-browser
