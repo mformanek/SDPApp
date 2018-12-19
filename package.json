@@ -27,7 +27,7 @@
     "jshint": "^2.6.0"
   },
   "scripts": {
-    "test": "jshint main.js"
+    "test": "jshint database.js"
   },
   "author": "Not Monday",
   "license": "GPL-3.0"
